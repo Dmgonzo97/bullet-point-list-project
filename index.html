@@ -31,6 +31,19 @@
 </body>
 
 <script>
+
+  const todos = document.querySelectorAll('.todoItem');
+  const completedTodos = document.querySelectorAll('.completed');
+  const complWrapper = document.querySelector('.completedTodoWrapper');
+  
+  todos.forEach(todo => todo.addEventListener('click', (event) => {
+    const completedTodo = document.createElement('li');
+    const todotext = document.createTextNode(todo.textContent);
+    completedTodo.appendChild(todotext);
+    complWrapper.appendChild(completedTodo);
+    todo.remove(); // Need to indivdually remove from Pending todos
+  }));
+
 </script>
 
 </html>
